@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
+@theme {
+  --color-comp_bg: var(--comp_bg);
+  --color-ele_bg: var(--ele_bg);
+
+  --color-topic_color: var(--topic_color);
+
+  --color-sub_topic_color: var(--sub_topic_color);
+
+  --color-muted_color: var(--muted_color);
+  --color-header_bg: var(--header_bg);
+
+  --color-footer_bg: var(--footer_bg);
+
+  --color-primary_color: var(--primary_color);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --comp_bg: hsl(120, 2%, 12%);
+  --ele_bg: hsl(0, 0%, 16%);
+  --topic_color: hsl(240, 100%, 100%);
+  --sub_topic_color: hsl(0, 0%, 76%);
+  --muted_color: hsl(0, 0%, 56%);
+  --header_bg: hsl(120, 4%, 6%);
+  --footer_bg: hsl(240, 3%, 7%);
+  --primary_color: hsl(240, 3%, 7%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.primary_btn:hover,
+.secondary_btn:hover {
+  scale: 1.05;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.primary_btn {
+  background-color: var(--topic_color);
+  color: black;
+  padding: 0.4rem;
+  border-radius: 6%;
+  scale: 1;
+  transition: all;
+  transition-duration: 500ms;
+  cursor: pointer;
 }
 
+.secondary_btn {
+  background-color: var(--ele_bg);
+  color: var(--topic_color);
+  padding: 0.4rem;
+  border-radius: 6%;
+  scale: 1;
+  transition: all;
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+
+.nav_items {
+  color: var(--sub_topic_color);
+  font-weight: 500;
+  scale: 1;
+  transition: all;
+  transition-duration: 500ms;
+}
+
+.nav_items:hover {
+  cursor: pointer;
+  color: var(--topic_color);
+  font-weight: 600;
+  scale: 1.08;
+}
+
+.bred {
+  border: 2px solid red;
+}
+
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth !important;
 }
+
+/* .forwardFigClass {
+  position: relative;
+}
+
+.forwardFigClass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  width: 8px;
+  background-color: blue;
+  display: block;
+  margin-right: 20px;
+} */
