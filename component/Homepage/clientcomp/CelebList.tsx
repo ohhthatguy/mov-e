@@ -6,7 +6,7 @@ export default function CelebList({ e, index }: any) {
 
   return (
     <div
-      className={`${spanClass} relative group overflow-hidden rounded-3xl hover:cursor-pointer border border-white/10 bg-header_bg/20 shadow-xl`}
+      className={` relative group overflow-hidden rounded-3xl hover:cursor-pointer border border-white/10 bg-header_bg/20 shadow-xl`}
     >
       {/* Background Image */}
       <Image
