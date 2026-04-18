@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# mov-e [Visit Website](https://mov-e-ten.vercel.app/)
 
-## Getting Started
+A modern and responsive movie discovery platform built with Next.js and the TMDB API. It allows users to explore trending movies and TV shows, view detailed information, and watch trailers.
 
-First, run the development server:
+## Project Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This web application allows users to browse trending TV shows and movies, view detailed information, and watch trailers. This application has incorprated various layout such as Bento Grid layout, full-screen layout, Horizontal Scroll system for a better user experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup Instructions
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run this project locally, follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone the repository:**
+   git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
 
-## Learn More
+2. **Install dependencies:**
+   npm install
 
-To learn more about Next.js, take a look at the following resources:
+3. **Set up Environment Variables:**
+   Create a .env.local file and add your TMDB key:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   TMDB_API_KEY=your_key_here
+   NEXT_PUBLIC_API_URL=your_key_here
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Run the development server:**
+   npm run dev
 
-## Deploy on Vercel
+## API Details
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Source: The Movie Database (TMDB)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Endpoints used: - /trending/all/day: For the homepage hero section. - /discover/tv: For tv series in homepage - /movie/{id}: For detailed movie information. - /movie/{id}/videos: To fetch YouTube trailer keys. - /movie/${id}/credits: To fetch movie's credit
+                - /movie/${id}/images: To fetch movie's images - /movie/${id}/similar: To fetch similar movie
+                - /tv/{id}: For detailed tv series information.
+                - /tv/{id}/videos: To fetch YouTube trailer keys.
+                - /tv/${id}/credits: To fetch tv series's credit - /tv/${id}/images: To fetch tv series's images
+                - /tv/${id}/similar: To fetch similar tv series
+
+## Design Decisions
+
+Bento Grid: Implemented for the "TV Shows" section to create an asymmetrical, modern UI that highlights featured content.
+
+Next.js App Router: Chosen for its superior performance and built-in support for loading.tsx skeletons.
+
+Tailwind CSS: Used for rapid styling and ensuring mobile responsiveness with custom grid spans.
