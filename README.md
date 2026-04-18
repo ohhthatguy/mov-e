@@ -48,40 +48,49 @@ Tailwind CSS: Used for rapid styling and ensuring mobile responsiveness with cus
 
 1. **Hero Section**:
   <p align="center">
-<img src="/screenshots/Hero.png" width="700"/>
+
+<img width="1320" height="636" alt="Hero" src="https://github.com/user-attachments/assets/877fc32b-f438-4fd5-aac7-733ee9b541a2" />
+
   </p>
 
 2. **Horizontal-scroll layout**:
   <p align="center">
-<img src="/screenshots/horizontal-scroll-layout.png" width="700"/>
+<img width="1319" height="622" alt="screenshot-2026-04-18_09-40-16" src="https://github.com/user-attachments/assets/a8163045-1488-403f-902e-e4c3e6474898" />
+
   </p>
 
 3. **Bento layout**:
   <p align="center">
-<img src="/screenshots/bento-layout.png" width="700"/>
+<img width="1312" height="623" alt="screenshot-2026-04-18_09-39-56" src="https://github.com/user-attachments/assets/976e6448-7dd4-46f5-827f-f864c90e2077" />
+
   </p>
 
 4. **Hero-loading Page**:
   <p align="center">
-<img src="/screenshots/Home-loading.png" width="700"/>
+<img width="1318" height="624" alt="screenshot-2026-04-18_14-52-12" src="https://github.com/user-attachments/assets/703841a3-cd5c-41d5-a33d-ef926f751871" />
+
   </p>
 
 5. **Detail-page-first section**
 <p align="center">
- <img src="/screenshots/detail-page-first-section.png" width="700"/>
+<img width="1326" height="630" alt="screenshot-2026-04-18_14-59-26" src="https://github.com/user-attachments/assets/2620ebf8-3c40-454f-80af-347cee87cc1e" />
+
    </p>
 
 6. **Detail-Images section**
 <p align="center">
- <img src="/screenshots/detail-loading.png" width="700"/>
+<img width="1309" height="631" alt="screenshot-2026-04-18_15-07-03" src="https://github.com/user-attachments/assets/e38a3252-0fb5-4117-94bb-503a8f83fb51" />
+
    </p>
 
 7. **Detail-loading page**
 <p align="center">
- <img src="/screenshots/movie-Detail-img.png" width="700"/>
+<img width="1291" height="627" alt="screenshot-2026-04-18_14-54-09" src="https://github.com/user-attachments/assets/c350caac-8e52-4bc9-9511-2f985d8451eb" />
+
    </p>
 
 8. **Similar page**
 <p align="center">
- <img src="/screenshots/similar.png" width="700"/>
+<img width="1314" height="622" alt="screenshot-2026-04-18_15-08-27" src="https://github.com/user-attachments/assets/9da9ca5c-08d2-43a0-b31f-2399a8d24fd1" />
+
    </p>
