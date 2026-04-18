@@ -56,7 +56,7 @@ export default function CaroselPopularSection({ data }: any) {
 
               <Link
                 href={`/movie-detail/${currentMovie.id}`}
-                className="secondary_btn inline-block w-fit"
+                className="border rounded-sm px-2 hover:cursor-pointer hover:scale-105 scale-100 transition-all duration-500 inline-block w-fit"
               >
                 MORE
               </Link>
