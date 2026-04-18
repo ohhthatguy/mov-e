@@ -1,6 +1,7 @@
 import { optionGetServer } from "@/lib/helper/option";
 import Image from "next/image";
 import Link from "next/link";
+import ReviewImg from "../clientcomp/ReviewImg";
 
 export const getTvShowDetail = async (id: string) => {
   try {
@@ -78,6 +79,45 @@ export const getTvShowImages = async (id: string) => {
   }
 };
 
+export const getSeriesReview = async (id: string) => {
+  try {
+    const url = `https://api.themoviedb.org/3/tv/${id}/reviews?language=en-US&page=1`;
+
+    const response = await fetch(url, optionGetServer);
+    // Check if the response is okay (status 200-299)
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+
+    throw new Error("Something wrong occur in fetching data from api");
+  }
+};
+
+export const getMovieRecomendation = async (id: string) => {
+  try {
+    const url = `https://api.themoviedb.org/3/tv/${id}/similar?language=en-US&page=1`;
+
+    const response = await fetch(url, optionGetServer);
+    console.log(response);
+    // Check if the response is okay (status 200-299)
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+
+    throw new Error("Something wrong occur in fetching data from api");
+  }
+};
+
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   try {
     const { id } = await params;
@@ -87,6 +127,8 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
     const videoData = await getTvShowVideo(id);
     const movieCredit = await getTvShowCredit(id);
     const movieImagesApi = await getTvShowImages(id);
+    const seriesReview = await getSeriesReview(id);
+    const movieRecommend = await getMovieRecomendation(id);
 
     console.log(videoData);
     // Check if the response is okay (status 200-299)
@@ -226,6 +268,76 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                     </div>
                   );
                 })}
+            </div>
+          </div>
+
+          <div className="grid gap-2">
+            <div className="text-4xl font-bold">Review</div>
+            <ReviewImg movieReview={seriesReview} />
+            {/* <div className="text-sub_topic_color grid gap-4 text-lg">
+              {movieReview.results.splice(0, 5).map((e: any, index: number) => 
+              
+              {
+                const img = `${posterBaseUrl}${e.author_details.avatar_path}`
+                const  [imgSrc, setImgSrc] = useState(img);
+                return(
+                <div key={index}>
+                  <div className="flex gap-2">
+                    <div className="h-20 w-20 relative">
+                      <Image
+                        src={imgSrc}
+                        alt={e.author || e.author_details.name}
+                        fill
+                        onError={() => setImgSrc("/homepage.png")}
+                        className="object-cover transition-transform duration-700 group-hover:scale-110  hover:opacity-60"
+                      />
+                    </div>
+                    <div>
+                      <div className="flex gap-2">
+                        <div>{e.author || e.author_details.name}</div>
+                        <div>{e.author_details.rating}</div>
+                      </div>
+                      <div>
+                        {e.created_at?.split("T")?.[0] || "Date unavailable"}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>{e.content}</div>
+                </div>
+              )}
+              
+              )}
+            </div> */}
+          </div>
+
+          <div className="grid gap-2">
+            <div>
+              <div className="text-4xl font-bold">Similar</div>
+              <div>You would also like</div>
+            </div>
+
+            <div className="flex w-full overflow-auto p-4 gap-8 scrollbar-custom">
+              {movieRecommend.results
+                .splice(0, 6)
+                .map((e: any, index: number) => (
+                  <Link
+                    href={`/movie-detail/${e.id}`}
+                    key={index}
+                    className="bg-ele_bg rounded-md  h-88 w-56 shrink-0 hover:cursor-pointer hover:scale-105 scale-100 transition-all duration-300"
+                  >
+                    <div className="h-9/12 w-full relative">
+                      <Image
+                        alt={e.title}
+                        src={`${posterBaseUrl}${e.poster_path}`}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110  hover:opacity-60"
+                      />
+                    </div>
+
+                    <div className="font-bold px-2 ">{e.name}</div>
+                  </Link>
+                ))}
             </div>
           </div>
         </div>

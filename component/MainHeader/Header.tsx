@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { RiMovie2Line } from "react-icons/ri";
 const Header = () => {
   return (
     <div className="h-18 bg-header_bg flex justify-around text-sub_topic_color items-center">
-      <Link href={"/"} className="hover:cursor-pointer">
-        mov-e
+      <Link
+        href={"/"}
+        className="hover:cursor-pointer flex gap-2 items-center  hover:text-blue-600 transition-colors duration-500"
+      >
+        <RiMovie2Line className="hover:cursor-pointer" size={28} /> mov-e
       </Link>
 
       <div className="capitalize flex gap-4 ">
@@ -14,8 +18,6 @@ const Header = () => {
           TV
         </a>
       </div>
-
-      <div>Theme</div>
     </div>
   );
 };

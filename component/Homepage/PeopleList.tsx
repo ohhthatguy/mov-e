@@ -1,50 +1,63 @@
-import { optionGetServer } from "@/lib/helper/option";
+import { FaAd, FaClock, FaFire, FaStar } from "react-icons/fa";
 
-export const getPeopleList = async () => {
-  try {
-    const url =
-      "https://api.themoviedb.org/3/trending/person/day?language=en-US";
+export const features = [
+  {
+    title: "Ad-free browsing experience",
+    icon: FaAd,
+  },
+  {
+    title: "Trending & popular content",
+    icon: FaFire,
+  },
+  {
+    title: "Latest releases updated regularly",
+    icon: FaClock,
+  },
 
-    const response = await fetch(url, optionGetServer);
-    // Check if the response is okay (status 200-299)
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    console.log(data);
-    return data;
-  } catch (error) {
-    console.log(error);
-
-    throw new Error("Something wrong occur in fetching data from api");
-  }
-};
+  {
+    title: "Ratings & detailed info",
+    icon: FaStar,
+  },
+];
 
 const PeopleList = async () => {
-  try {
-    const data = await getPeopleList();
-    // Check if the response is okay (status 200-299)
-    if (data.results.length <= 0) {
-      throw new Error(`HTTP error! status: ${data.status}`);
-    }
+  return (
+    <div className="grid sm:grid-rows-2 sm:grid-cols-2 my-8  gap-8 p-8">
+      {features?.map((e: any, index: number) => {
+        const Icon = e.icon;
 
-    console.log(data);
+        return (
+          <div
+            key={index}
+            className={`p-4 rounded-md grid place-content-center   h-56 border bg-white  hover:bg-sub_topic_color hover:cursor-pointer transition-all duration-500 scale-100 hover:scale-105 hover:text-black`}
+          >
+            <div className="flex justify-center mb-4 items-center ">
+              <Icon
+                size={56}
+                className={`p-2 rounded-md ${e.bgColor} ${e.color} `}
+              />
+            </div>
 
-    return (
-      <div className="grid gap-6">
-        <div className="text-4xl  font-extrabold  leading-tight text-topic_color ">
-          Most popular Celebrities
-        </div>
-
-        <div className="  relative bg-primary_color text-sub_topic_color  ">
-          {/* <CelebList data={data} /> */}
-        </div>
-      </div>
-    );
-  } catch (error) {
-    console.log(error);
-
-    throw new Error("Something wrong occur in fetching data from api");
-  }
+            <div>
+              <div>{e.title}</div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+    // <div className="flex justify-between gap-6 text-topic_color border h-52">
+    //   {features.map((e: any, index: number) => {
+    //     const Icon = e.icon;
+    //     return (
+    //       <div key={index}>
+    //         <div>
+    //           <Icon />
+    //         </div>
+    //         <div>{e.title}</div>
+    //       </div>
+    //     );
+    //   })}
+    // </div>
+  );
 };
 export default PeopleList;

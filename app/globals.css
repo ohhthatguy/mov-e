@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 @theme {
   --color-comp_bg: var(--comp_bg);
   --color-ele_bg: var(--ele_bg);
@@ -27,7 +26,32 @@
   --primary_color: hsl(240, 3%, 7%);
 }
 
-.primary_btn:hover,
+@layer utilities {
+  /* This creates a custom utility class */
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 4px; /* Very thin width */
+    height: 4px; /* Very thin height for horizontal scroll */
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: transparent; /* Makes the track invisible */
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: var(--color-tertiary_color); /* Use your HSL variable */
+    border-radius: 10px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary_color); /* Darker on hover */
+  }
+}
+
+.primary_btn:hover {
+  scale: 1.05;
+  background-color: var(--ele_bg);
+  color: var(--topic_color);
+}
 .secondary_btn:hover {
   scale: 1.05;
 }
@@ -41,6 +65,7 @@
   transition: all;
   transition-duration: 500ms;
   cursor: pointer;
+  font-weight: 700;
 }
 
 .secondary_btn {
