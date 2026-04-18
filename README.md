@@ -43,3 +43,45 @@ Bento Grid: Implemented for the "TV Shows" section to create an asymmetrical, mo
 Next.js App Router: Chosen for its superior performance and built-in support for loading.tsx skeletons.
 
 Tailwind CSS: Used for rapid styling and ensuring mobile responsiveness with custom grid spans.
+
+##Screenshots
+
+1. **Hero Section**:
+  <p align="center">
+<img src="/screenshots/Hero.png" width="700"/>
+  </p>
+
+2. **Horizontal-scroll layout**:
+  <p align="center">
+<img src="/screenshots/horizontal-scroll-layout.png" width="700"/>
+  </p>
+
+3. **Bento layout**:
+  <p align="center">
+<img src="/screenshots/bento-layout.png" width="700"/>
+  </p>
+
+4. **Hero-loading Page**:
+  <p align="center">
+<img src="/screenshots/Home-loading.png" width="700"/>
+  </p>
+
+5. **Detail-page-first section**
+<p align="center">
+ <img src="/screenshots/detail-page-first-section.png" width="700"/>
+   </p>
+
+6. **Detail-Images section**
+<p align="center">
+ <img src="/screenshots/detail-loading.png" width="700"/>
+   </p>
+
+7. **Detail-loading page**
+<p align="center">
+ <img src="/screenshots/movie-Detail-img.png" width="700"/>
+   </p>
+
+8. **Similar page**
+<p align="center">
+ <img src="/screenshots/similar.png" width="700"/>
+   </p>
